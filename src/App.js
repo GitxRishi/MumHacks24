@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Hero from './Components/Hero';
+import Login from './Components/Login';
+import SignUp from './Components/SignUp';
+import Upload from './Components/Upload';
+import OTP from './Components/OTP';
+import Dashboard from './Components/Dashboard';
+import ExampleWrapper from './Components/FormUpload';
+
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { VisibProvider } from './Components/Context/VisibContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='hero' element={<Hero/>}/>
+        <Route path='login' element={<Login/>}/>
+        <Route path='signup' element={<SignUp/>}/>
+        <Route path='otp' element={<OTP/>}/>
+        <Route path='upload' element={<Upload/>}/>
+        <Route path='dashboard' element={<Dashboard/>}/>
+        <Route path='FormUpload' element={<ExampleWrapper/>}/>
+      </Routes>
+      
+    </Router>
+   
+   
   );
 }
 
